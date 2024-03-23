@@ -1,0 +1,18 @@
+export const ADD_BILLS = "ADD_BILLS"
+export const ADD_BILLS_RED = "ADD_BILLS_RED"
+export const GET_BILLS = "GET_BILLS"
+export const GET_BILLS_RED = "GET_BILLS_RED"
+export const UPDATE_BILLS = "UPDATE_BILLS"
+export const UPDATE_BILLS_RED = "UPDATE_BILLS_RED"
+export const DELETE_BILLS = "DELETE_BILLS"
+export const DELETE_BILLS_RED = "DELETE_BILLS_RED"
+
+
+export const ADD_USER = "ADD_USER"
+export const ADD_USER_RED = "ADD_USER_RED"
+export const GET_USER = "GET_USER"
+export const GET_USER_RED = "GET_USER_RED"
+export const UPDATE_USER = "UPDATE_USER"
+export const UPDATE_USER_RED = "UPDATE_USER_RED"
+export const DELETE_USER = "DELETE_USER"
+export const DELETE_USER_RED = "DELETE_USER_RED"
