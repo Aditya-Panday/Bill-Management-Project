@@ -1,27 +1,9 @@
 {
   "user": [
     {
-      "id": "9fbc",
-      "username": "aadi121",
-      "email": "aadi121@gmail.com",
-      "password": "121001"
-    },
-    {
-      "id": "8bcc",
-      "username": "ashish223",
-      "email": "ashishjk@gmail.com",
-      "password": "123321"
-    },
-    {
-      "id": "bc2a",
-      "username": "aman",
-      "email": "aman@gmail.com",
-      "password": "121001"
-    },
-    {
-      "id": "adfc",
-      "username": "Sanjay9899",
-      "email": "sanjaybaba@gmail.com",
+      "id": "738b",
+      "username": "tom",
+      "email": "tom1@gmail.com",
       "password": "121001"
     }
   ],
@@ -69,6 +51,21 @@
         }
       ],
       "userid": "adfc"
+    },
+    {
+      "id": "f10f",
+      "name": "Aditya Panday",
+      "number": "9899228654",
+      "address": "50 Dabua Leisure Valley Park Road Dabua Colony Sector 50",
+      "date": "2024-03-27",
+      "products": [
+        {
+          "pname": "item1",
+          "quantity": "2",
+          "price": "800"
+        }
+      ],
+      "userid": "bc2a"
     }
   ]
 }

@@ -18,7 +18,7 @@ export default function HomePage() {
                 borderWidth="1px"
             >
                 <Text fontSize="3xl"  fontFamily="cursive">
-                    SurePass Invoicing App
+                    Bill Management App
                 </Text>
             </Box>
             <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">

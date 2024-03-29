@@ -1,0 +1,62 @@
+{
+  "user": [
+    {
+      "id": "738b",
+      "username": "tom",
+      "email": "tom1@gmail.com",
+      "password": "121001"
+    },
+    {
+      "id": "a281",
+      "username": "anand9899",
+      "email": "anand9899@gmail.com",
+      "password": "121001"
+    }
+  ],
+  "bills": [
+    {
+      "id": "9b5b",
+      "name": "Aditya Panday",
+      "number": "09899228654",
+      "address": "50 Dabua Leisure Valley Park Road Dabua Colony Sector 50",
+      "date": "2024-03-13",
+      "products": [
+        {
+          "pname": "Item1",
+          "quantity": "3",
+          "price": "8688"
+        }
+      ]
+    },
+    {
+      "id": "2b55",
+      "name": "system",
+      "number": "9898989898",
+      "address": ",askjfavsgiuasgda",
+      "date": "2024-03-14",
+      "products": [
+        {
+          "pname": "it",
+          "quantity": "2",
+          "price": "3000"
+        }
+      ],
+      "userid": "adfc"
+    },
+    {
+      "id": "404c",
+      "name": "Aditya Panday",
+      "number": "9899228654",
+      "address": "50 Dabua Leisure Valley Park Road Dabua Colony Sector 50",
+      "date": "2024-03-14",
+      "products": [
+        {
+          "pname": "dim dam",
+          "quantity": "22",
+          "price": "300"
+        }
+      ],
+      "userid": "adfc"
+    }
+  ]
+}

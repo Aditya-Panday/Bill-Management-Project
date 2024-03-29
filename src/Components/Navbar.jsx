@@ -16,7 +16,7 @@ export default function Navbar() {
         <>
             <nav className="navbar navbar-dark bg-dark ">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/" style={{ fontFamily: "cursive", fontSize: "1.5rem", color: "#e0ac1c" }}>SurePass Bill Generate App</a>
+                    <a className="navbar-brand" href="/" style={{ fontFamily: "cursive", fontSize: "1.5rem", color: "#e0ac1c" }}>React Bill Management App</a>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <span className="navbar-toggler-icon"></span>

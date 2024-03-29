@@ -4,30 +4,36 @@ import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser, getUser } from "../../Store/ActionCreators/UserAction";
-
 
 const Signup = () => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
     const toast = useToast();
 
-    //   all data states
-    const [username, setUsername] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const [confirmpassword, setConfirmpassword] = useState();
-    let dispatch = useDispatch()
-    let UserStateData = useSelector((state) => state.UserStateData)
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmpassword, setConfirmpassword] = useState('');
+    const [registeredEmails, setRegisteredEmails] = useState([]);
 
+    const dispatch = useDispatch();
+    const UserStateData = useSelector((state) => state.UserStateData);
+
+    useEffect(() => {
+        getUser();
+        // Update the list of registered emails
+        const emails = UserStateData.map(user => user.email);
+        setRegisteredEmails(emails);
+    }, [UserStateData.length]);
 
     const submitHandler = async (e) => {
         e.preventDefault();
 
-        if (!username || !email || !password || !confirmpassword) { //agar blank hai toh error de dega
+        if (!username || !email || !password || !confirmpassword) {
             toast({
-                title: "Please Fill all the Feilds",
+                title: "Please Fill all the Fields",
                 status: "warning",
                 duration: 3000,
                 isClosable: true,
@@ -35,7 +41,7 @@ const Signup = () => {
             });
             return;
         }
-        if (password !== confirmpassword) {     //password validation
+        if (password !== confirmpassword) {
             toast({
                 title: "Passwords Do Not Match",
                 status: "warning",
@@ -45,27 +51,38 @@ const Signup = () => {
             });
             return;
         }
+        if (registeredEmails.includes(email)) {
+            toast({
+                title: "Email Already Registered",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+                position: "bottom",
+            });
+            return;
+        }
 
         try {
-            let item = {
+            const item = {
                 username: username,
                 email: email,
                 password: password,
-            }
-            await dispatch(addUser({ ...item }));
-            // Display success message after successful dispatch
+            };
+            await dispatch(addUser(item));
+
+
             toast({
                 title: "Success",
-                description: "SignUP Successfully Please Login",
+                description: "Successfully Account Created",
                 status: "success",
                 duration: 3000,
                 isClosable: true,
             });
         } catch (error) {
-            // Display error message if dispatch fails
+            console.error('Error generating User:', error);
             toast({
                 title: "Error",
-                description: "Failed to generate bill. Please try again.",
+                description: "Failed to generate User. Please try again.",
                 status: "error",
                 duration: 3000,
                 isClosable: true,
@@ -73,30 +90,13 @@ const Signup = () => {
         }
     };
 
-    function getApiData() {
-        dispatch(getUser())
-
-    }
-
-
-    useEffect(() => {
-        getUser()
-    }, [UserStateData.length])
-
-
-
-
-
-
-
-
-
     return (
         <VStack spacing="5px">
             <FormControl id="first-name" border={"black"} isRequired>
                 <FormLabel>Username</FormLabel>
                 <Input
                     placeholder="Enter Username"
+                    value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
             </FormControl>
@@ -105,6 +105,7 @@ const Signup = () => {
                 <Input
                     type="email"
                     placeholder="Enter Your Email Address"
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
             </FormControl>
@@ -114,6 +115,7 @@ const Signup = () => {
                     <Input
                         type={show ? "text" : "password"}
                         placeholder="Enter Password"
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <InputRightElement width="4.5rem">
@@ -129,6 +131,7 @@ const Signup = () => {
                     <Input
                         type={show ? "text" : "password"}
                         placeholder="Confirm password"
+                        value={confirmpassword}
                         onChange={(e) => setConfirmpassword(e.target.value)}
                     />
                     <InputRightElement width="4.5rem">

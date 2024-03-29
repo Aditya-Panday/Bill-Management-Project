@@ -1,0 +1,34 @@
+.App {
+  height: 100vh;
+  max-height: fit-content;
+  overflow-y: auto !important;
+  /* border: 2px solid gray; */
+  display: flex;
+  background-image: url("background\ main.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.offcanvas-start {
+  width: 250px;
+  /* background-color: rgba(246, 245, 243, 0.388); */
+}
+
+.p-3 {
+  background: rgba(165, 179, 177, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 600px;
+  min-width: auto;
+  overflow-y: auto;
+}
+
+.cl {
+  font-family: cursive;
+  background: linear-gradient(90deg, rgba(36, 0, 0, 1) , rgba(202, 36, 137, 1) , rgba(63, 203, 86, 1) );
+  -webkit-background-clip: text;
+  color: transparent
+}

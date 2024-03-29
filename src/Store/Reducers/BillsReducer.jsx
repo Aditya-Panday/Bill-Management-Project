@@ -3,7 +3,7 @@ export default function BillsReducer(state = [], action) {
     let newState, index
     switch (action.type) {
         case ADD_BILLS_RED:
-            console.log("Bill Reducer" )
+            console.log("Bill Reducer")
 
             newState = [...state]   //spread make deep copy
             newState.push(action.payload)
@@ -18,6 +18,8 @@ export default function BillsReducer(state = [], action) {
             return state
 
         case DELETE_BILLS_RED:
+            console.log("reducer bills delete")
+
             newState = state.filter((x) => x.id !== action.payload.id)
             return newState;
         default:

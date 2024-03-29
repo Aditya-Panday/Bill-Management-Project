@@ -1,5 +1,6 @@
 import { ADD_USER, GET_USER, UPDATE_USER, DELETE_USER } from "../Constants"
 
+
 export function addUser(data) {
     console.log("action" + data.action)
     return {

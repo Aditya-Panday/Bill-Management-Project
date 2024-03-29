@@ -3,8 +3,7 @@ export default function UserReducer(state = [], action) {
     let newState, index
     switch (action.type) {
         case ADD_USER_RED:
-            console.log("User Reducer" )
-
+            console.log("User Reducer")
             newState = [...state]   //spread make deep copy
             newState.push(action.payload)
             return newState;

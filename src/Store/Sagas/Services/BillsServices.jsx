@@ -60,9 +60,11 @@ export async function updateRecord(payload) {
     }
 }
 
-export async function deleteRecord(payload) {
+export async function deleteRecord(id) {
+    console.log("services delete")
+
     try {
-        let response = await fetch("http://localhost:8000/bills/" + payload.id, {
+        let response = await fetch("http://localhost:8000/bills/" + id, {
             method: "delete",
             headers: {
                 "content-type": "application/json"
